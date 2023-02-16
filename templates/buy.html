@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Item {{ item.id }}</title>
+
+</head>
+<body>
+    <h1>Item {{ item.id }}</h1>
+    <p>Description of Item {{ item.id }}</p>
+    <button id="demo" onclick="myFunction()">Buy</button>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+    var stripe = Stripe('pk_test_51Mc0f0Eb69GAwradSgxNvJe3R4kvwXa7szaanIeIF2uCIpeRfbSR2QR2bOqfHq0CQDhkTOa624ZFCsU8XnOSC7XQ00TogolLao');
+
+    function myFunction() {
+        document.getElementById("demo").style.color = "pink";
+        fetch('/buy/1')
+            .then(response => {
+                return response.json()
+            }
+            )
+            .then(session => {
+                stripe.redirectToCheckout({sessionId: session.sessionId})
+            })
+        }
+</script>
+
+</body>
+</html>
