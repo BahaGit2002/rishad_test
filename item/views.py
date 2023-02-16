@@ -1,5 +1,4 @@
 import stripe
-from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views import View
 from django.http.response import JsonResponse
