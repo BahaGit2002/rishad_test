@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buy Item {{ item.id }}</title>
+    <title>Buy Order {{ order.id }}</title>
 
 </head>
 <body>
-    <h1>Item -> {{ item.name }}</h1>
-    <p>Description of Item -> {{ item.description }}</p>
-    <button id="demo" onclick="myFunction({{ item.id }})">Buy</button>
+    {% for item in items %}
+        <h1>Item -> {{ item.name }}</h1>
+        <p>Description of Item -> {{ item.description }}</p>
+    {% endfor %}
+    <button id="demo" onclick="myFunction({{ order.id }})">Buy</button>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
     var stripe = Stripe('pk_test_51Mc0f0Eb69GAwradSgxNvJe3R4kvwXa7szaanIeIF2uCIpeRfbSR2QR2bOqfHq0CQDhkTOa624ZFCsU8XnOSC7XQ00TogolLao');
@@ -22,6 +24,7 @@
             )
             .then(session => {
                 stripe.redirectToCheckout({sessionId: session.sessionId})
+                stripe.redirectToCheckout({sessionId: session.sessionId2})
             })
         }
 </script>
