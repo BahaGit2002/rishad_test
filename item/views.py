@@ -2,10 +2,9 @@ import stripe
 from django.views.generic.base import TemplateView
 from django.views import View
 from django.http.response import JsonResponse
-from item.choices import CurrencyChoices
 from RishadTEst import settings
 from item.models import Item, Order
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 
 
 class BuyView(View):

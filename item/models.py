@@ -3,14 +3,14 @@ from item.choices import CurrencyChoices
 
 
 class Item(models.Model):
-    name = models.CharField(verbose_name='Название', max_length=255)
-    description = models.TextField(verbose_name='Описание')
-    price = models.DecimalField(verbose_name='Цена', max_digits=11, decimal_places=2)
-    currency = models.CharField(verbose_name='Валюта', max_length=255, choices=CurrencyChoices.choices)
+    name = models.CharField( max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=11, decimal_places=2)
+    currency = models.CharField(max_length=255, choices=CurrencyChoices.choices)
 
     class Meta:
-        verbose_name = ' Элемент'
-        verbose_name_plural = 'Элементы'
+        verbose_name = ' Item'
+        verbose_name_plural = 'Items'
 
     def __str__(self):
         return f'{self.name}'
@@ -24,4 +24,4 @@ class Order(models.Model):
         verbose_name_plural = 'Orders'
 
     def __str__(self):
-        return f'{self.items.name}'
+        return f'{self.id}'

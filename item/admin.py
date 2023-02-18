@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from item.forms import OrderForm
 from item.models import Item, Order
 
 
@@ -12,3 +14,8 @@ class ItemAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id']
     list_display_links = list_display
+    form = OrderForm
+
+
+
+
