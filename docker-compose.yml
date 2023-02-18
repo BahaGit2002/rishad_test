@@ -20,7 +20,7 @@ services:
              python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - static_volume:/home/RishadTEst/staticfiles/
+      - static_volume:/home/RishadTEst/static/
       - media_volume:/home/RishadTEst/media/
     expose:
       - 8000
@@ -31,7 +31,7 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/RishadTEst/staticfiles/
+      - static_volume:/home/RishadTEst/static/
       - media_volume:/home/RishadTEst/media/
     ports:
       - 80:80

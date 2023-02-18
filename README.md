@@ -1,13 +1,39 @@
 Test app for Rishad
+
 Настройка
+
 Первое, что нужно сделать, это клонировать репозиторий:
 
 $ git clone https://github.com/BahaGit2002/rishad_test.git
-$ cd RishadTEst
+
+$ cd rishad_test
+
 После этого создать файл .env. Пример файла .env_example
+
+Создат static папку
+
+mkdir static
 
 Запуск
 На Docker с docker-compose:
 
-$ docker-compose up
+$ docker-compose up -d
+
 И перейдите к http://localhost
+
+Admin:
+
+docker-compose exec web python manage.py createsuperuser
+
+Чтоб зайти в админку: перейдите к http://localhost/admin
+
+Алгоритм первых действий в Stripe 
+
+Начале нужно создать Item, и потом перейдите к http://localhost/item/{id}
+и нажмите кнопку buy.
+
+Потом нужно создать Order http://localhost/order_detail/{id}
+и нажмите кнопку buy.
+
+
+
