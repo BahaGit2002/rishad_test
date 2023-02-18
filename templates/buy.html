@@ -15,7 +15,7 @@
     function myFunction(id) {
         document.getElementById("demo").style.color = "pink";
         console.log('id', id)
-        fetch(`/order/${id}`)
+        fetch(`/buy/${id}`)
             .then(response => {
                 return response.json()
             }

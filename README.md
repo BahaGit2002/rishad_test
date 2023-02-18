@@ -27,7 +27,7 @@ $ docker-compose up -d
 ## Admin:
 
 ```sh
-docker-compose exec web python manage.py createsuperuser
+$ docker-compose exec web python manage.py createsuperuser
 ```
 Чтоб зайти в админку: перейдите к `http://localhost/admin`.
 
